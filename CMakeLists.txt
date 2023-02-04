@@ -56,3 +56,8 @@ message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
 message("GSL includes: ${GSL_INCLUDE_DIR}")
 include_directories(${GSL_INCLUDE_DIR})
 target_link_libraries(microcanonical ${GSL_LIBRARY} ${GSL_CBLAS_LIBRARY})
+
+install(TARGETS microcanonical microcanonical_sampling
+        RUNTIME DESTINATION ${CMAKE_HOME_DIRECTORY}
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib/static)
